@@ -1,0 +1,23 @@
+<ion-menu class="app-menu" [content]="content">
+  <ion-content>
+    <div class="profile">
+      <div class="avatar">
+        <div id="menu-avatar"></div>
+        <div class="placeholder"></div>
+      </div>
+      <p class="name">{{accountSrv.accountInfo.name}} {{accountSrv.accountInfo.surname}}</p>
+    </div>
+    <ion-list>
+      <div class="item" *ngFor="#p of pages" (click)="openPage(p.id)" [class.active]="menuSrv.getActivePage() == p.id">
+        {{p.title}}
+      </div>
+
+      <!-- <button ion-item *ngFor="#p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button> -->
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav id="nav" [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>

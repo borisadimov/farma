@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="20px" height="15px" viewBox="0 0 20 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-left-c</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="06.-Pharmacy-info" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="8_pharmacy-popup-mail" transform="translate(-20.000000, -20.000000)" fill="#FFFFFF">
+            <g id="arrow-left-c" transform="translate(20.000000, 20.000000)">
+                <g id="Layer_1">
+                    <path d="M6.21022727,0.51459854 L0.511363636,6.26277372 C0.170454545,6.58029197 0,7.01277372 0,7.48905109 C0,7.96532847 0.170454545,8.39233577 0.511363636,8.71532847 L6.21022727,14.4854015 C6.88636364,15.169708 7.98863636,15.169708 8.66477273,14.4854015 C9.34090909,13.8010949 9.34090909,12.6952555 8.66477273,12.0109489 L5.93181818,9.25182482 L18.2613636,9.25182482 C19.2215909,9.25182482 20,8.4689781 20,7.5 C20,6.5310219 19.2215909,5.74817518 18.2613636,5.74817518 L5.93181818,5.74817518 L8.67045455,2.98905109 C9.34659091,2.30474453 9.34659091,1.19890511 8.67045455,0.51459854 C7.98863636,-0.169708029 6.89204545,-0.169708029 6.21022727,0.51459854 L6.21022727,0.51459854 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

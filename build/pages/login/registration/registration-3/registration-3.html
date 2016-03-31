@@ -1,0 +1,51 @@
+<ion-navbar *navbar primary>
+  <ion-title class="ion_title">Registration</ion-title>
+</ion-navbar>
+
+<ion-content padding class="p_registration-3">
+  <form novalidate (ngSubmit)="onRegister()">
+    <div class="avatar_place" (click)="setPicture()">
+      <div id="reg-avatar"></div>
+      <div class="placeholder"></div>
+      <img src="build/pics/avatar/plus.svg">
+    </div>
+
+    <ion-input
+      type="text"
+      placeholder="Name"
+      [(ngModel)]="info.name">
+    </ion-input>
+    <ion-input
+      type="text"
+      placeholder="Surname"
+      [(ngModel)]="info.surname">
+    </ion-input>
+    <ion-label text-light id="birthday" (click)="setDate()">
+      Birthday
+    </ion-label>
+
+    <!-- https://github.com/driftyco/ionic/issues/5033 посмотри, тут чуть подробнее -->
+
+    <!-- <div class="gender" radio-group [(ngModel)]="info.sex">
+      <span>Sex:</span>
+      <div class="gender-item">
+        <ion-radio value="male" name="male" checked="true"></ion-radio>
+        <ion-label>Male</ion-label>
+      </div>
+      <div class="gender-item">
+        <ion-radio value="female" name="female"></ion-radio>
+        <ion-label>Female</ion-label>
+      </div>
+    </div> -->
+    <gender></gender>
+    
+    <ion-input
+      class="phone"
+      type="tel"
+      placeholder="Phone"
+      [(ngModel)]="info.phone">
+    </ion-input>
+
+    <button class="continue" block round secondary type="submit">Register</button>
+  </form>
+</ion-content>

@@ -1,0 +1,212 @@
+<ion-navbar primary *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Profile</ion-title>
+</ion-navbar>
+
+<ion-toolbar>
+  <ion-segment [(ngModel)]="tabs">
+    <ion-segment-button value="icare">Icare</ion-segment-button>
+    <ion-segment-button value="profile">Profile</ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+<ion-content padding class="p_profile">
+
+  <div [ngSwitch]="tabs">
+    <div
+      class="edit"
+      (click)="onEdit()"
+      *ngSwitchWhen="'profile'">
+      <img src="build/pics/edit.svg">
+    </div>
+
+    <div class="avatar_place">
+      <div id="reg-avatar"></div>
+      <div class="placeholder"></div>
+      <img src="build/pics/avatar/plus.svg" *ngSwitchWhen="'profile'">
+    </div>
+
+    <div *ngSwitchWhen="'icare'" class="icare">
+      <div class="container">
+        <p black class="name">Hello, <span>Marie Simeoni</span></p>
+        <p primary class="score">WELLNESS SCORE <span>53%</span></p>
+      </div>
+
+      <div class="container">
+        <p grey-normal class="container-title">Your lifestyle</p>
+
+        <div class="card heart" (click)="openIcareDetails()">
+          <div class="card-icon">
+            <img src="build/pics/cards/heart.svg">
+          </div>
+          <div class="card-info">
+            <div class="info-left">
+              <p grey-light class="info-title"><span>HEART</span> BEAT</p>
+              <p grey-light class="info-subtitle">connected: Name app</p>
+            </div>
+            <div class="info-right">
+              <p class="info-number">85</p>
+              <p class="info-units">b/m</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card activity" (click)="openIcareDetails()">
+          <div class="card-icon">
+            <img src="build/pics/cards/activity.svg">
+          </div>
+          <div class="card-info">
+            <div class="info-left">
+              <p grey-light class="info-title"><span>Activity</span> STEP</p>
+              <p grey-light class="info-subtitle">connected: Name app</p>
+            </div>
+            <div class="info-right">
+              <p class="info-number">2.349</p>
+              <p class="info-units">step</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card sleep" (click)="openIcareDetails()">
+          <div class="card-icon">
+            <img src="build/pics/cards/sleep.svg">
+          </div>
+          <div class="card-info">
+            <div class="info-left">
+              <p grey-light class="info-title"><span>Sleep</span> quality</p>
+              <p grey-light class="info-subtitle">connected: Name app</p>
+            </div>
+            <div class="info-right">
+              <p class="info-number">7h</p>
+              <p class="info-units">night</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <p grey-normal class="container-title">Your lifestyle</p>
+
+        <div class="card sat" (click)="openIcareDetails()">
+          <div class="card-icon">
+            <img src="build/pics/cards/sat.svg">
+          </div>
+          <div class="card-info">
+            <div class="info-left">
+              <p grey-light class="info-title"><span>SAT</span> Check</p>
+              <p grey-light class="info-subtitle">date: 23.05.15</p>
+            </div>
+            <div class="info-right">
+              <p class="info-number">76%</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card food" (click)="openIcareDetails()">
+          <div class="card-icon">
+            <img src="build/pics/cards/food.svg">
+          </div>
+          <div class="card-info">
+            <div class="info-left">
+              <p grey-light class="info-title"><span>FOOD</span> DETECTIVE</p>
+              <p grey-light class="info-subtitle">date: 23.05.15</p>
+            </div>
+            <div class="info-right">
+              <p class="info-number">32%</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div *ngSwitchWhen="'profile'" class="profile">
+      <div class="container">
+        <p primary class="title">Pharmacy code</p>
+        <ion-input
+          readonly
+          type="text"
+          placeholder="Pharmacy code"
+          [(ngModel)]="userDataSrv.pharmacy.code">
+        </ion-input>
+
+        <div class="input-edit">
+          Edit
+        </div>
+      </div>
+
+      <div class="container">
+        <p primary class="title">Anagraphy</p>
+        <ion-input
+          readonly
+          type="text"
+          placeholder="Name"
+          [(ngModel)]="accountSrv.accountInfo.name">
+        </ion-input>
+
+        <ion-input
+          readonly
+          type="text"
+          placeholder="Surname"
+          [(ngModel)]="accountSrv.accountInfo.surname">
+        </ion-input>
+
+        <ion-label
+          text-light
+          id="profile_birthday"
+          (click)="setDate()">
+          {{ accountSrv.accountInfo.birthday | date }}
+        </ion-label>
+      </div>
+
+      <!-- <div
+        class="gender"
+        radio-group
+        readonly
+        [(ngModel)]="accountSrv.accountInfo.sex">
+        <span>Sex:</span>
+        <div class="gender-item">
+          <ion-radio disabled value="male" name="male"></ion-radio>
+          <ion-label>Male</ion-label>
+        </div>
+        <div class="gender-item">
+          <ion-radio disabled value="female" name="female"></ion-radio>
+          <ion-label>Female</ion-label>
+        </div>
+      </div> -->
+
+      <gender></gender>
+
+      <div class="container">
+        <p primary class="title">Contact</p>
+        <ion-input
+          readonly
+          type="tel"
+          placeholder="Phone"
+          [(ngModel)]="accountSrv.accountInfo.phone">
+        </ion-input>
+        <ion-input
+          readonly
+          type="text"
+          placeholder="Email"
+          [(ngModel)]="accountSrv.accountInfo.email">
+        </ion-input>
+        <ion-input
+          readonly
+          type="password"
+          placeholder="Password"
+          value="12345">
+        </ion-input>
+        <div class="input-edit" (click)="onResetPwd()">
+          Reset
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ion-content>
+
+<my-bottom-buttons></my-bottom-buttons>

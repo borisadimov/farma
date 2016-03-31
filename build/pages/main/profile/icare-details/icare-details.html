@@ -1,0 +1,28 @@
+<ion-navbar class="ion-nav" *navbar>
+  <ion-title>Details reminder</ion-title>
+</ion-navbar>
+
+<ion-content padding class="p_icare-details">
+  <div class="card sat" (click)="openIcareDetails()">
+    <div class="card-icon">
+      <img src="build/pics/cards/sat.svg">
+    </div>
+    <div class="card-info">
+      <div class="info-left">
+        <p grey-light class="info-title"><span>SAT</span> Check</p>
+        <p grey-light class="info-subtitle">date: 23.05.15</p>
+      </div>
+      <div class="info-right">
+        <p class="info-number">76%</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-description">
+    <p grey-light class="title">NOTE</p>
+    <p grey-light>
+      At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi.
+    </p>
+  </div>
+
+  <button round grey-light>View report (.pdf)</button>
+</ion-content>

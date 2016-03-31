@@ -1,0 +1,346 @@
+<ion-navbar primary *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Reminders</ion-title>
+</ion-navbar>
+
+
+<ion-content padding class="p_reminders">
+  <button round secondary (click)="openNewReminder()">Create new reminder</button>
+
+  <div class="cards">
+    <ion-card (click)="openReminderDetails()" *ngFor="#reminder of usrSrv.reminders">
+      <ion-card-content class="reminder">
+        <div class="reminder-image">
+        </div>
+        <div class="reminder-info">
+          <p grey-light class="reminder-title">{{reminder.medication}}</p>
+          <div class="reminder-infoRounds">
+            <div class="roundAndTime roundAndTime-activeOkay">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">9:00</p>
+            </div>
+            <div class="roundAndTime">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">12:00</p>
+            </div>
+            <div class="roundAndTime roundAndTime-activeWarning">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">18:00</p>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!--
+    <ion-card (click)="openReminderDetails()">
+      <ion-card-content class="reminder">
+        <div class="reminder-image">
+        </div>
+        <div class="reminder-info">
+          <p grey-light class="reminder-title">Name product</p>
+          <div class="reminder-infoRounds">
+            <div class="roundAndTime roundAndTime-activeWarning">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">9:00</p>
+            </div>
+            <div class="roundAndTime">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">12:00</p>
+            </div>
+            <div class="roundAndTime roundAndTime-activeOkay">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">15:00</p>
+            </div>
+            <div class="roundAndTime roundAndTime-activeError">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">18:00</p>
+            </div>
+            <div class="roundAndTime roundAndTime-activeOkay">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">21:00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="more">
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="openReminderDetails()">
+      <ion-card-content class="reminder">
+        <div class="reminder-image">
+        </div>
+        <div class="reminder-info">
+          <p grey-light class="reminder-title">Name product</p>
+          <div class="reminder-infoRounds">
+            <div class="roundAndTime roundAndTime-activeError">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">9:00</p>
+            </div>
+            <div class="roundAndTime">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">12:00</p>
+            </div>
+            <div class="roundAndTime">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">18:00</p>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="openReminderDetails()">
+      <ion-card-content class="reminder">
+        <div class="reminder-image">
+        </div>
+        <div class="reminder-info">
+          <p grey-light class="reminder-title">Alsivit Dolomit</p>
+          <div class="reminder-infoRounds">
+            <div class="roundAndTime roundAndTime-activeOkay">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">9:00</p>
+            </div>
+            <div class="roundAndTime">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">12:00</p>
+            </div>
+            <div class="roundAndTime roundAndTime-activeWarning">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">18:00</p>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="openReminderDetails()">
+      <ion-card-content class="reminder">
+        <div class="reminder-image">
+        </div>
+        <div class="reminder-info">
+          <p grey-light class="reminder-title">Name product</p>
+          <div class="reminder-infoRounds">
+            <div class="roundAndTime roundAndTime-activeWarning">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">9:00</p>
+            </div>
+            <div class="roundAndTime">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">12:00</p>
+            </div>
+            <div class="roundAndTime roundAndTime-activeOkay">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">15:00</p>
+            </div>
+            <div class="roundAndTime roundAndTime-activeError">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">18:00</p>
+            </div>
+            <div class="roundAndTime roundAndTime-activeOkay">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">21:00</p>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="openReminderDetails()">
+      <ion-card-content class="reminder">
+        <div class="reminder-image">
+        </div>
+        <div class="reminder-info">
+          <p grey-light class="reminder-title">Name product</p>
+          <div class="reminder-infoRounds">
+            <div class="roundAndTime roundAndTime-activeError">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">9:00</p>
+            </div>
+            <div class="roundAndTime">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">12:00</p>
+            </div>
+            <div class="roundAndTime">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">18:00</p>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="openReminderDetails()">
+      <ion-card-content class="reminder">
+        <div class="reminder-image">
+        </div>
+        <div class="reminder-info">
+          <p grey-light class="reminder-title">Alsivit Dolomit</p>
+          <div class="reminder-infoRounds">
+            <div class="roundAndTime roundAndTime-activeOkay">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">9:00</p>
+            </div>
+            <div class="roundAndTime">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">12:00</p>
+            </div>
+            <div class="roundAndTime roundAndTime-activeWarning">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">18:00</p>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="openReminderDetails()">
+      <ion-card-content class="reminder">
+        <div class="reminder-image">
+        </div>
+        <div class="reminder-info">
+          <p grey-light class="reminder-title">Name product</p>
+          <div class="reminder-infoRounds">
+            <div class="roundAndTime roundAndTime-activeWarning">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">9:00</p>
+            </div>
+            <div class="roundAndTime">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">12:00</p>
+            </div>
+            <div class="roundAndTime roundAndTime-activeOkay">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">15:00</p>
+            </div>
+            <div class="roundAndTime roundAndTime-activeError">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">18:00</p>
+            </div>
+            <div class="roundAndTime roundAndTime-activeOkay">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">21:00</p>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="openReminderDetails()">
+      <ion-card-content class="reminder">
+        <div class="reminder-image">
+        </div>
+        <div class="reminder-info">
+          <p grey-light class="reminder-title">Name product</p>
+          <div class="reminder-infoRounds">
+            <div class="roundAndTime roundAndTime-activeError">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">9:00</p>
+            </div>
+            <div class="roundAndTime">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">12:00</p>
+            </div>
+            <div class="roundAndTime">
+              <div class="round">
+                <div class="round-background"></div>
+              </div>
+              <p class="time">18:00</p>
+            </div>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    -->
+  </div>
+
+  <div class="firstOpenModal">
+    <div class="modal">
+      <img src="build/pics/reminder.svg">
+      <p black><span>Welcome!</span> Here you can create<br/>your reminder that alerts<br/>you whenever you will need<br/>to take medicine</p>
+      <p black>Helping you take care of yourself.</p>
+      <button round secondary>Set meal times</button>
+    </div>
+    <div class="later">I’ll do it later from my profile</div>
+  </div>
+
+  <div class="secondOpenModal">
+    <div class="modal">
+      <img src="build/pics/okay.svg">
+      <p black class="title">Compliments!</p>
+      <p>Your reminder has been set!</p>
+    </div>
+  </div>
+
+
+</ion-content>
+
+<my-bottom-buttons></my-bottom-buttons>
