@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_confirm_popup</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="11.-New-Reminder" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="23_new-reminder-complete" transform="translate(-163.000000, -274.000000)" fill="#60B670">
+            <g id="Group" transform="translate(20.000000, 234.000000)">
+                <g id="icon_confirm_popup" transform="translate(143.000000, 40.000000)">
+                    <g id="Layer_1">
+                        <path d="M25,0 C11.1899038,0 0,11.1899038 0,25 C0,38.8100962 11.1899038,50 25,50 C38.8100962,50 50,38.8100962 50,25 C50,11.1899038 38.8100962,0 25,0 L25,0 Z M21.1418269,33.8581731 C20.8533654,34.1466346 20.4447115,34.3870192 20.0841346,34.3870192 C19.7235577,34.3870192 19.3149038,34.1346154 19.0144231,33.8461538 L12.2836538,27.1153846 L14.4230769,24.9759615 L20.0961538,30.6490385 L35.0961538,15.5408654 L37.1995192,17.7163462 L21.1418269,33.8581731 L21.1418269,33.8581731 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,43 @@
+<ion-content padding class="registration-1">
+  <my-farma-header></my-farma-header>
+
+  <p secondary class="title">Indica la tua farmacia.</p>
+  <p class="subtitle">Inserendo il codice della tua farmacia potrai usufruire di <strong>servizi e promozioni dedicate a te,</strong>
+    semplicemente con un tap.</p>
+
+
+  <form
+    novalidate
+    #f="ngForm"
+    (ngSubmit)="onContinue()">
+
+    <ion-input
+      required
+      type="text"
+      placeholder="Pharmacy code"
+      ngControl="sku"
+      [(ngModel)]="code"
+      (click)="resetFlag()">
+    </ion-input>
+
+    <p
+      text-light
+      class="dontHave"
+      (click)="onHow()">
+      I do not know the code. How can I get it?
+    </p>
+
+    <button
+      secondary
+      class="continue"
+      block
+      round
+      type="submit"
+      [disabled]="!f.form.valid">
+      Continue
+    </button>
+
+    <p danger class="error" *ngIf="errorCode">There is no associated pharmacy</p>
+  </form>
+
+</ion-content>

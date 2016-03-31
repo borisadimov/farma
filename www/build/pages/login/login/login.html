@@ -1,0 +1,39 @@
+<ion-content padding class="p_login">
+  <my-farma-header></my-farma-header>
+
+  <button block round facebook class="facebook">
+    <img src="build/pics/facebook_icon.svg">
+    Login with Facebook
+  </button>
+
+  <p class="or" text-light>or</p>
+
+  <form (ngSubmit)="onLogIn()" [ngFormModel]="form" novalidate>
+    <ion-input
+      type="email"
+      placeholder="Email"
+      [(ngModel)]="auth.login"
+      [ngFormControl]="form.controls['email']"
+      (click)="resetFlags()">
+    </ion-input>
+    <ion-input
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="auth.password"
+      [ngFormControl]="form.controls['password']"
+      (click)="resetFlags()">
+    </ion-input>
+
+    <p class="forgot" (click)="onForgot()" text-light>Forgot password?</p>
+
+    <p danger class="wrong" *ngIf="flagWrong">Wrong email or password</p>
+
+    <button block round secondary class="login-button" type="submit" [disabled]="!form.valid">Login</button>
+  </form>
+
+  <div class="have-account">
+    <span text-light>You do not have an account?</span>
+    <span text-light class="register-link" (click)="onRegister()">Register</span>
+  </div>
+
+</ion-content>

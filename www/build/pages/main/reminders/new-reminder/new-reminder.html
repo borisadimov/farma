@@ -1,0 +1,173 @@
+<ion-navbar class="ion-nav" *navbar>
+  <ion-title>New reminder</ion-title>
+</ion-navbar>
+
+<ion-content padding class="p_new-reminder">
+  <form novalidate
+        #f="ngForm"
+        (ngSubmit)="onSaveReminder()">
+
+    <div class="name">
+      <label class="name-label">
+        <p primary class="title">MEDICINE</p>
+        <ion-input placeholder="Name of product"
+                   required
+                   ngControl="sku"
+                   [(ngModel)]="reminder.medication">
+        </ion-input>
+      </label>
+      <div class="photo-button"></div>
+    </div>
+
+    <div class="time">
+      <div class="time-item" *ngFor="#program of reminder.programs">
+        <img src="build/pics/time/{{program.period}}.svg">
+        <p black>{{program.time | date:'shortTime'}}</p>
+        <div class="time-edit">EDIT</div>
+      </div>
+      <div class="time-addProgram" (click)="onAdd()" *ngIf="!flagAdding">
+        + ADD PROGRAM
+      </div>
+    </div>
+
+    <div class="addProgramView" *ngIf="flagAdding">
+      <div class="tabs">
+        <div class="tabs-item tabs-itemMorning"
+             (click)="onClickTab('morning')"
+             [class.tabs-itemActive]="period === 'morning'">
+          <div class="tabs-icon"></div>
+          <p grey-normal class="tabs-title">Morning</p>
+        </div>
+
+        <div class="tabs-item tabs-itemNoon"
+             (click)="onClickTab('noon')"
+             [class.tabs-itemActive]="period === 'noon'">
+          <div class="tabs-icon"></div>
+          <p grey-normal class="tabs-title">Noon</p>
+        </div>
+
+        <div class="tabs-item tabs-itemEvening"
+             (click)="onClickTab('evening')"
+             [class.tabs-itemActive]="period === 'evening'">
+          <div class="tabs-icon"></div>
+          <p grey-normal class="tabs-title">Evening</p>
+        </div>
+
+        <div class="tabs-item tabs-itemNight"
+             (click)="onClickTab('night')"
+             [class.tabs-itemActive]="period === 'night'">
+          <div class="tabs-icon"></div>
+          <p grey-normal class="tabs-title">Night</p>
+        </div>
+
+        <div class="tabs-item tabs-itemFrequency">
+          <div class="tabs-icon"></div>
+          <p grey-normal class="tabs-title">Frequency</p>
+        </div>
+      </div>
+
+      <div class="details">
+        <div class="details-item">
+          <div class="details-info">
+            <input
+              type="range"
+              min={{getRange().min}}
+              max={{getRange().max}}
+              [(ngModel)]="programTime">
+            <span>{{programTime | hoursToDate | date:'shortTime'}}</span>
+            <div>
+              <span>{{getRange().min | hoursToDate | date:'shortTime'}}</span>
+              <span>{{getRange().max | hoursToDate | date:'shortTime'}}</span>
+            </div>
+          </div>
+
+          <div class="dosage-type">
+            <p primary class="title">DOSAGE TYPE</p>
+            <div class="list-select">
+              <ion-item class="list-selectNumber">
+                <ion-label>Select</ion-label>
+                <ion-select class="number-select" [(ngModel)]="currentProgram.dosage">
+                  <ion-option value="1">1</ion-option>
+                  <ion-option value="2">2</ion-option>
+                  <ion-option value="3" checked="true" >3</ion-option>
+                  <ion-option value="4">4</ion-option>
+                  <ion-option value="5">5</ion-option>
+                  <ion-option value="6">6</ion-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-item class="list-selectType">
+                <ion-label>Select</ion-label>
+                <ion-select class="type-select" [(ngModel)]="currentProgram.dosageType">
+                  <ion-option value="day" checked="true">days</ion-option>
+                  <ion-option value="month">months</ion-option>
+                </ion-select>
+              </ion-item>
+            </div>
+          </div>
+
+          <div class="details-edit">
+            <div class="details-cancel" (click)="onCancelProgram()">
+              Cancel
+            </div>
+            <div class="details-save" (click)="onSaveProgram()">
+              Save
+            </div>
+          </div>
+        </div>
+
+        <div class="details-item details-frequency" *ngIf="false">
+          <div class="details-info">
+              <!-- content -->
+          </div>
+
+          <div class="details-edit">
+            <div class="details-cancel">
+              Cancel
+            </div>
+            <div class="details-save">
+              Save
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="duration">
+      <p primary class="title">DURATION</p>
+      <div class="list-select">
+        <ion-item class="list-selectNumber">
+          <ion-label>Select</ion-label>
+          <ion-select class="number-select" [(ngModel)]="reminder.duration">
+            <ion-option value="1">1</ion-option>
+            <ion-option value="2">2</ion-option>
+            <ion-option value="3">3</ion-option>
+            <ion-option value="4">4</ion-option>
+            <ion-option value="5">5</ion-option>
+            <ion-option value="6">6</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item class="list-selectType">
+          <ion-label>Select</ion-label>
+          <ion-select class="type-select" [(ngModel)]="reminder.durationType">
+            <ion-option value="day">days</ion-option>
+            <ion-option value="month">months</ion-option>
+          </ion-select>
+        </ion-item>
+      </div>
+      <ion-item class="checkbox">
+        <ion-checkbox></ion-checkbox>
+        <ion-label>lifetime</ion-label>
+      </ion-item>
+    </div>
+
+    <button class="save"
+            secondary
+            round
+            type="submit"
+            [disabled]="!f.form.valid || !reminder.programs.length">Save reminder</button>
+  </form>
+</ion-content>

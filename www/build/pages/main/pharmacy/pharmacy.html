@@ -1,0 +1,219 @@
+<ion-navbar *navbar primary>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title class="ion_title">Your pharmacy</ion-title>
+</ion-navbar>
+
+
+<ion-content class="p_pharmacy">
+  <ion-card class="brief">
+    <ion-card-content>
+      <div class="bgImage">
+        <img src="build/pics/dashboard_pharmacy.png">
+      </div>
+      <div class="logo">
+        <img src="build/pics/withoutlogo.svg">
+      </div>
+
+      <div class="center">
+        <div class="text">
+          <h3 strange-grey>{{ph.pharmacyName}}</h3>
+          <p grey-light>{{ph.address}}</p>
+          <p grey-light>T. {{ph.phone}} - {{ph.email}}</p>
+        </div>
+
+        <div class="status">
+          <div class="status-rounded">
+            <div class="status-round">
+              <div class="status-roundCenter"></div>
+            </div>
+          </div>
+          <div class="status-text">
+            <p grey-medium-pharmacy class="status-now">NOW IS OPEN TILL 18:30</p>
+            <p grey-light class="status-next">NEXT OPENING: Tuesday 9:30</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <!-- <button (click)="openContacts()">Contacts</button> -->
+        <div class="rounded-button">
+          <div class="round">
+            <img src="build/pics/pharmacy/phone.svg">
+          </div>
+          <p grey-light>CHIAMA</p>
+        </div>
+        <div class="rounded-button" (click)="openContacts()">
+          <div class="round">
+            <img src="build/pics/pharmacy/mail.svg">
+          </div>
+          <p grey-light>SCRIVI</p>
+        </div>
+        <div class="rounded-button">
+          <div class="round">
+            <img src="build/pics/pharmacy/pin.svg">
+          </div>
+          <p grey-light>RAGGIUNGI</p>
+        </div>
+
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="description">
+    <div class="line"></div>
+
+    <ion-card-header>
+      Description
+    </ion-card-header>
+
+    <ion-card-content>
+      <p grey-light>{{ph.description}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="timetables">
+    <div class="line"></div>
+
+    <ion-card-header>
+      Timetables
+    </ion-card-header>
+
+    <ion-card-content>
+      <table>
+        <tr>
+          <td><h3>Opening</h3></td>
+        </tr>
+        <tr>
+          <td>Monday</td>
+          <td>15:00 - 19:00</td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td>9:30 - 12:00 | 15:00 - 19:00</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>9:00 - 12:30 | 15:00 - 19:00</td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td>9:00 - 12:30 | 15:00 - 19:00</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>9:00 - 12:30 | 15:00 - 19:00</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td>9:00 - 13:00</td>
+        </tr>
+        <tr>
+          <td>Sunday</td>
+          <td>chiuso</td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td><h3>Turn</h3></td>
+        </tr>
+        <tr>
+          <td>Data Inizio</td>
+          <td>01-04-2016 | 14:00</td>
+        </tr>
+        <tr>
+          <td>Data Fine</td>
+          <td>02-04-2016 | 17:00</td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <td><h3>Closing</h3></td>
+        </tr>
+        <tr>
+          <td>Data Inizio</td>
+          <td>23-03-2016 | 9:00</td>
+        </tr>
+        <tr>
+          <td>Data Fine</td>
+          <td>29-03-2016 | 19:00</td>
+        </tr>
+      </table>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="contacts">
+    <div class="line"></div>
+
+    <ion-card-header>
+      All contact
+    </ion-card-header>
+
+    <ion-card-content>
+      <div class="contacts-info">
+        <h3 strange-grey>{{ph.pharmacyName}}</h3>
+        <p grey-light>P.IVA 0123456789</p>
+
+        <div class="contacts-text">
+          <p grey-light>{{ph.address}}</p>
+          <p grey-light>Tel. {{ph.phone}}</p>
+          <p grey-light>Fax. +39 049.1234567</p>
+        </div>
+
+        <div class="contacts-text">
+          <p grey-light>{{ph.email}}</p>
+          <p grey-light>{{ph.website}}</p>
+        </div>
+      </div>
+
+      <div class="socials">
+        <a class="social-button" href="#">
+          <img src="build/pics/socials/facebook.svg">
+        </a>
+        <a class="social-button" href="#">
+          <img src="build/pics/socials/twitter.svg">
+        </a>
+        <a class="social-button" href="#">
+          <img src="build/pics/socials/google.svg">
+        </a>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="map">
+    <ion-card-header>
+      MAPS
+    </ion-card-header>
+    <my-map [lat]="ph.lat" [lng]="ph.lng"></my-map>
+  </ion-card>
+
+  <div class="footer-buttons">
+    <div class="buttons">
+      <div class="rounded-button">
+        <div class="round">
+          <img src="build/pics/pharmacy/phone.svg">
+        </div>
+        <p grey-light>CHIAMA</p>
+      </div>
+      <div class="rounded-button" (click)="openContacts()">
+        <div class="round">
+          <img src="build/pics/pharmacy/mail.svg">
+        </div>
+        <p grey-light>SCRIVI</p>
+      </div>
+      <div class="rounded-button">
+        <div class="round">
+          <img src="build/pics/pharmacy/pin.svg">
+        </div>
+        <p grey-light>RAGGIUNGI</p>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>
+
+<my-bottom-buttons></my-bottom-buttons>

@@ -1,0 +1,101 @@
+<ion-navbar primary *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Promo</ion-title>
+</ion-navbar>
+
+<ion-toolbar>
+  <ion-segment [(ngModel)]="tabs">
+    <ion-segment-button value="promo">Promo</ion-segment-button>
+    <ion-segment-button value="wishlist">Wishlist</ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+
+<ion-content class="p_news">
+  <div [ngSwitch]="tabs">
+    <div class="promos" *ngSwitchWhen="'promo'">
+      <ion-card *ngFor="#promo of data" (click)="openPromoDetails(promo)">
+        <ion-card-content class="promo">
+          <div class="promo-star filled">
+            <svg width="21" height="20" viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><title>prefer_icon_off</title><path d="M21 7.674h-8.034L10.5.044l-2.466 7.63H0l6.572 4.695L4.012 20l6.488-4.73L16.988 20l-2.565-7.63L21 7.673z" fill="#DBDBDB" class="svg-star" fill-rule="evenodd"/></svg>
+          </div>
+          <div class="promo-image">
+            <img src="build/pics/promos/{{promo.img}}">
+          </div>
+          <div class="promo-info">
+            <p grey-light class="promo-title">{{promo.name}}</p>
+            <p primary class="promo-infoButton">{{promo.ean}}</p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div class="wishes" *ngSwitchWhen="'wishlist'">
+      <ion-card>
+        <ion-card-content class="wish">
+          <div class="wish-star">
+            <svg width="21" height="20" viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><title>prefer_icon_off</title><path d="M21 7.674h-8.034L10.5.044l-2.466 7.63H0l6.572 4.695L4.012 20l6.488-4.73L16.988 20l-2.565-7.63L21 7.673z" fill="#DBDBDB" class="svg-star" fill-rule="evenodd"/></svg>
+          </div>
+          <div class="wish-image">
+            <img src="build/pics/promos/promo-1.png">
+          </div>
+          <div class="wish-info">
+            <p grey-light class="promo-title">Title promotion lorem ipsum -30%</p>
+            <p primary class="promo-infoButton">INFO</p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-content class="wish">
+          <div class="wish-star filled">
+            <svg width="21" height="20" viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><title>prefer_icon_off</title><path d="M21 7.674h-8.034L10.5.044l-2.466 7.63H0l6.572 4.695L4.012 20l6.488-4.73L16.988 20l-2.565-7.63L21 7.673z" fill="#DBDBDB" class="svg-star" fill-rule="evenodd"/></svg>
+          </div>
+          <div class="wish-image">
+            <img src="build/pics/promos/promo-2.png">
+          </div>
+          <div class="wish-info">
+            <p grey-light class="promo-title">Title promotion lorem ipsum -30%</p>
+            <p primary class="promo-infoButton">INFO</p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-content class="wish">
+          <div class="wish-star">
+            <svg width="21" height="20" viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><title>prefer_icon_off</title><path d="M21 7.674h-8.034L10.5.044l-2.466 7.63H0l6.572 4.695L4.012 20l6.488-4.73L16.988 20l-2.565-7.63L21 7.673z" fill="#DBDBDB" class="svg-star" fill-rule="evenodd"/></svg>
+          </div>
+          <div class="wish-image">
+            <img src="build/pics/promos/promo-3.png">
+          </div>
+          <div class="wish-info">
+            <p grey-light class="promo-title">Title promotion lorem ipsum -30%</p>
+            <p primary class="promo-infoButton">INFO</p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <ion-card-content class="wish">
+          <div class="wish-star filled">
+            <svg width="21" height="20" viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><title>prefer_icon_off</title><path d="M21 7.674h-8.034L10.5.044l-2.466 7.63H0l6.572 4.695L4.012 20l6.488-4.73L16.988 20l-2.565-7.63L21 7.673z" fill="#DBDBDB" class="svg-star" fill-rule="evenodd"/></svg>
+          </div>
+          <div class="wish-image">
+            <img src="build/pics/promos/promo-4.png">
+          </div>
+          <div class="wish-info">
+            <p grey-light class="promo-title">Title promotion lorem ipsum -30%</p>
+            <p primary class="promo-infoButton">INFO</p>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+  </div>
+
+</ion-content>
+
+<my-bottom-buttons [current]="'promo'"></my-bottom-buttons>

@@ -1,0 +1,44 @@
+<ion-navbar primary *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Settings</ion-title>
+</ion-navbar>
+
+<ion-content padding class="p_settings">
+  <ion-list>
+    <p primary class="title">Device</p>
+    <ion-item>
+      <ion-label grey-light>Notifications</ion-label>
+      <ion-toggle secondary checked="true"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label grey-light>Bluetooth</ion-label>
+      <ion-toggle secondary checked="true"></ion-toggle>
+    </ion-item>
+
+    <p primary class="title">Reminder</p>
+    <ion-item>
+      <ion-label grey-light>Notify me before 30 min</ion-label>
+      <ion-toggle secondary checked="true"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label grey-light>Alert reminder</ion-label>
+      <ion-toggle secondary checked="false"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label grey-light>Failure reminder</ion-label>
+      <ion-toggle secondary checked="false"></ion-toggle>
+    </ion-item>
+
+    <p primary class="title">Other</p>
+    <ion-item>
+      <ion-label grey-light>Notify promo</ion-label>
+      <ion-toggle secondary checked="false"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label grey-light>Proximity reminder</ion-label>
+      <ion-toggle secondary checked="true"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>

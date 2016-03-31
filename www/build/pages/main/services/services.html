@@ -1,0 +1,169 @@
+<ion-navbar *navbar primary>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Services</ion-title>
+</ion-navbar>
+
+<ion-toolbar>
+  <ion-segment [(ngModel)]="tabs">
+    <ion-segment-button value="service">Service</ion-segment-button>
+    <ion-segment-button value="booking">Booking</ion-segment-button>
+  </ion-segment>
+</ion-toolbar>
+
+<ion-content padding class="p_services services">
+  <div [ngSwitch]="tabs">
+    <ion-list *ngSwitchWhen="'service'">
+
+      <div class="services-list orange">
+        <p orange class="services-title">CUTE</p>
+
+        <div class="service">
+          <div class="service-icon">
+            <img src="build/pics/services/skin.svg">
+          </div>
+
+          <p grey-light class="service-text"><span>SKIN</span> CHECK</p>
+
+          <div class="service-mail">
+            <img src="build/pics/mail.svg">
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">
+            <img src="build/pics/services/trico.svg">
+          </div>
+
+          <p grey-light class="service-text"><span>TRICO</span> CHECK</p>
+
+          <div class="service-mail">
+            <img src="build/pics/mail.svg">
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">
+            <img src="build/pics/services/uv.svg">
+          </div>
+
+          <p grey-light class="service-text"><span>UV</span> CHECK</p>
+
+          <div class="service-mail">
+            <img src="build/pics/mail.svg">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="services-list purple">
+        <p orange class="services-title">NUTRI</p>
+
+        <div class="service">
+          <div class="service-icon">
+            <img src="build/pics/services/body_composition.png">
+          </div>
+
+          <p grey-light class="service-text"><span>SKIN</span> CHECK</p>
+
+          <div class="service-mail">
+            <img src="build/pics/mail.svg">
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="service-icon">
+            <img src="build/pics/services/body.svg">
+          </div>
+
+          <p grey-light class="service-text"><span>TRICO</span> CHECK</p>
+
+          <div class="service-mail">
+            <img src="build/pics/mail.svg">
+          </div>
+        </div>
+      </div>
+
+    </ion-list>
+
+    <ion-list *ngSwitchWhen="'booking'">
+
+      <div class="book-list">
+        <div class="booking orange" (click)="openServiceDetails()">
+          <div class="booking-icon">
+            <img src="build/pics/services/uv.svg">
+          </div>
+
+          <div class="booking-info">
+            <p grey-light class="booking-title"><span>UV</span> CHECK</p>
+            <p grey-light class="booking-subtitle">Request sent on 23.05.15</p>
+          </div>
+
+        </div>
+
+        <div class="booking purple" (click)="openServiceDetails()">
+          <div class="booking-icon">
+            <img src="build/pics/services/body_composition.png">
+          </div>
+
+          <div class="booking-info">
+            <p grey-light class="booking-title"><span>BODY</span> COMPOSITION</p>
+            <p grey-light class="booking-subtitle">Request sent on 23.05.15</p>
+          </div>
+
+        </div>
+
+        <div class="booking red">
+          <div class="booking-icon" (click)="openServiceDetails()">
+            <img src="build/pics/services/sat.svg">
+          </div>
+
+          <div class="booking-info">
+            <p grey-light class="booking-title"><span>SAT</span> CHECK</p>
+            <p grey-light class="booking-subtitle">Request sent on 23.05.15</p>
+          </div>
+
+        </div>
+
+        <div class="booking purple" (click)="openServiceDetails()">
+          <div class="booking-icon">
+            <img src="build/pics/services/food.svg">
+          </div>
+
+          <div class="booking-info">
+            <p grey-light class="booking-title"><span>FOOD</span> DETECTIVE</p>
+            <p grey-light class="booking-subtitle">Request sent on 23.05.15</p>
+          </div>
+
+        </div>
+
+        <div class="booking blue" (click)="openServiceDetails()">
+          <div class="booking-icon">
+            <img src="build/pics/services/densi.svg">
+          </div>
+
+          <div class="booking-info">
+            <p grey-light class="booking-title"><span>DENSI</span> CHECK</p>
+            <p grey-light class="booking-subtitle">Request sent on 23.05.15</p>
+          </div>
+
+        </div>
+
+        <div class="booking orange" (click)="openServiceDetails()">
+          <div class="booking-icon">
+            <img src="build/pics/services/uv.svg">
+          </div>
+
+          <div class="booking-info">
+            <p grey-light class="booking-title"><span>UV</span> CHECK</p>
+            <p grey-light class="booking-subtitle">Request sent on 23.05.15</p>
+          </div>
+
+        </div>
+      </div>
+    </ion-list>
+  </div>
+</ion-content>
+
+<my-bottom-buttons></my-bottom-buttons>

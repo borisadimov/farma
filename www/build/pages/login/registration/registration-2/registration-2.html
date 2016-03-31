@@ -1,0 +1,58 @@
+<ion-navbar *navbar>
+  <ion-title class="ion_title">Registration</ion-title>
+</ion-navbar>
+
+<ion-content padding class="registration-2">
+  <p green class="title">Ora, crea un account..</p>
+  <p class="subtitle">Registrati <strong>e potrai avere sempre con te:</strong> visite, appunti, promemoria e molto altro.</p>
+
+  <button facebook class="facebook" block round>
+    <img src="build/pics/facebook_icon.svg">
+    Register with Facebook
+  </button>
+
+  <p text-light class="or">or</p>
+
+  <form (ngSubmit)="onContinue()" [ngFormModel]="form" novalidate>
+    <ion-input
+      required
+      type="email"
+      placeholder="Email"
+      [(ngModel)]="auth.login"
+      [ngFormControl]="form.controls['email']">
+    </ion-input>
+    <ion-input
+      required
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="auth.password"
+      [ngFormControl]="form.controls['password']">
+    </ion-input>
+    <ion-input
+      required
+      type="password"
+      placeholder="Confirm Password"
+      [(ngModel)]="confirmedPassword"
+      [ngFormControl]="form.controls['confirmPass']">
+    </ion-input>
+
+    <div class="checkboxes">
+      <ion-item no-lines>
+        <ion-label>Lorem ipsum legal privacy</ion-label>
+        <ion-checkbox required></ion-checkbox>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label>Autorizzo al trattamento dei dati etc..</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+    </div>
+
+    <!--p danger class="error" [hidden]="email.valid || email.pristine">Please, type your email correctly</p -->
+    <p danger class="error" *ngIf="errorExists">This email already exists</p>
+    <p danger class="error" *ngIf="errorCheck">Please, confirm legals</p>
+    <p danger class="error" *ngIf="errorPass">Passwords are not identical</p>
+
+    <button block round class="continue" type="submit" [disabled]="!form.valid">Continues</button>
+  </form>
+</ion-content>

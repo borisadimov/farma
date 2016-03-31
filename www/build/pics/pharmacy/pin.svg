@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="20px" viewBox="0 0 14 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.6.1 (26313) - http://www.bohemiancoding.com/sketch -->
+    <title>android-pin</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="06.-Pharmacy-info" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="8_pharmacy-info" transform="translate(-251.000000, -513.000000)" fill="#FFFFFF">
+            <g id="Group-2" transform="translate(93.000000, 498.000000)">
+                <g id="android-pin" transform="translate(158.000000, 15.000000)">
+                    <g id="Layer_1">
+                        <path d="M7,0 C3.149825,0 0,3.14986607 0,7.00004464 C0,12.25 7,20 7,20 C7,20 14,12.25 14,7.00004464 C14,3.14986607 10.850175,0 7,0 L7,0 Z M7,9.50004464 C5.600175,9.50004464 4.49995,8.39982143 4.49995,7.00004464 C4.49995,5.60017857 5.60013125,4.50004464 7,4.50004464 C8.39986875,4.50004464 9.50005,5.60017857 9.50005,7.00004464 C9.50005,8.39982143 8.399825,9.50004464 7,9.50004464 L7,9.50004464 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
